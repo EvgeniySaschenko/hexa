@@ -1,0 +1,23 @@
+.logo
+	display: flex
+	align-items: center
+	@media #{$phone-mini}
+		align-items: center
+		flex-direction: column
+	&__text
+		text-transform: uppercase
+		color: #000000
+		&:link,
+		&:visited,
+		&:active,
+		&:hover
+			color: #000000
+		&_1
+			font-size: 30px
+			margin-right: 20px
+			letter-spacing: 10px
+			@media #{$phone-mini}
+				margin-right: 0
+		&_2
+			font-size: 13px
+			line-height: 1.3

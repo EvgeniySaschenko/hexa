@@ -1,0 +1,223 @@
+@mixin slider__item_active
+	z-index: 0
+	opacity: 1
+	transition: 1.2s
+
+.slider
+	height: 795px
+	width: 100%
+	position: relative
+	@media (max-width: 1200px)
+		height: 540px
+	&__item
+		top: 0
+		left: 0
+		position: absolute
+		background-size: cover
+		background-position: bottom
+		width: 100%
+		height: 100%
+		z-index: -1
+		opacity: 0
+		transition: 1.5s
+		&::before
+			content: ""
+			display: inline-block
+			z-index: -1
+			position: absolute
+			left: -120px
+			top: 0
+			height: 100%
+			width: 42%
+			background-color: rgba(0, 0, 0, .4)
+			transform: skewX(-16deg)
+			@media #{$phone}
+				left: -65px
+				width: 60%
+			@media #{$phone-mini}
+				display: none
+	&__box
+		margin-top: 70px
+		line-height: 1
+		z-index: 1
+		@media #{$phone-mini}
+			display: flex
+			flex-direction: column
+			align-items: center
+		&-row
+			@media #{$phone-mini}
+				text-align: center
+			&_1
+				position: relative
+				left: -35px
+				margin-bottom: 25px
+				@media #{$phone}
+					left: 0
+				&::before
+					content: ""
+					position: absolute
+					left: 13px
+					height: 100%
+					width: 3px
+					background-color: #ffffff
+					transform: skewX(-16deg)
+					@media #{$phone-mini}
+						display: none
+	&__name
+		font-size: 90px
+		font-family: 'Intro'
+		text-transform: uppercase
+		padding: 10px 20px
+		display: inline-block
+		position: relative
+		z-index: 0
+		margin: 0 0 5px 35px
+		letter-spacing: -2px
+		@media #{$phone}
+			font-size: 60px
+		@media #{$phone-mini}
+			font-size: 40px
+			margin-left: 0
+		&::before
+			content: ""
+			background-color: rgba(255, 255, 255, .7)
+			filter: opacity(0.7)
+			transform: skewX(-16deg)
+			position: absolute
+			top: 0
+			left: 0
+			z-index: -1
+			width: 100%
+			height: 100%
+	&__destination
+		font-size: 36px
+		font-style: italic
+		font-weight: 700
+		font-family: 'Intro'
+		padding: 8px 28px 12px
+		display: inline-block
+		position: relative
+		z-index: 0
+		margin-left: 8px
+		margin-right: 5px
+		text-align: center
+		@media #{$phone-mini}
+			font-size: 28px
+			padding: 8px 15px 12px
+		&-text
+			border-bottom: 3px solid #000000
+			padding: 0 30px 7px
+			display: inline-block
+		&::before
+			content: ""
+			background-color: rgba(255, 255, 255, .7)
+			transform: skewX(-16deg)
+			position: absolute
+			top: 0
+			left: 0
+			z-index: -1
+			width: 100%
+			height: 100%
+	&__price
+		display: inline-block
+		position: relative
+		top: 12px
+		font-family: 'Intro'
+		font-weight: 400
+		color: #ffffff
+		position: relative
+		display: inline-block
+		padding: 4px 18px 4px 8px
+		&::before
+			content: ""
+			background: linear-gradient(to right, rgb(34,212,34), rgb(3,125,3))
+			transform: skewX(-16deg)
+			position: absolute
+			top: 0
+			left: 0
+			z-index: -1
+			width: 100%
+			height: 100%
+		&-count
+			font-weight: 800
+			font-size: 45px
+			margin: 0 15px
+		sup
+			font-size: 10px
+			position: relative
+			top: -9px
+	&__text
+		font-size: 19px
+		font-weight: 700
+		color: #ffffff
+		text-transform: uppercase
+		margin-bottom: 25px
+	&__nav
+		display: flex
+		align-items: center
+		position: relative
+		top: 440px
+		@media #{$phone-mini}
+			justify-content: center
+		&-arrow
+			cursor: pointer
+			display: none
+			&_left
+				margin-right: 28px
+			&_right
+				margin-left: 28px
+		&-item
+			border: 2px solid #ffffff
+			height: 14px
+			width: 14px
+			border-radius: 50%
+			display: flex
+			justify-content: center
+			align-items: center
+			position: relative
+			margin: 8px
+			cursor: pointer
+			&::before
+				content: ""
+				height: 8px
+				width: 8px
+				display: inline-block
+				border-radius: 50%
+				flex-shrink: 0
+	&__radio
+		display: none
+		&_1
+			&:checked ~ .container .slider__nav-arrow_left.slider__nav-arrow_4,
+			&:checked ~ .container .slider__nav-arrow_right.slider__nav-arrow_2
+				display: inline-block
+			&:checked ~ .container .slider__nav-item_1::before
+				background-color: #ffffff
+			&:checked ~ .slider__item_1
+				@include slider__item_active()
+
+		&_2
+			&:checked ~ .container .slider__nav-arrow_left.slider__nav-arrow_1,
+			&:checked ~ .container .slider__nav-arrow_right.slider__nav-arrow_3
+				display: inline-block
+			&:checked ~ .container .slider__nav-item_2::before
+				background-color: #ffffff
+			&:checked ~ .slider__item_2
+				@include slider__item_active()
+
+		&_3
+			&:checked ~ .container .slider__nav-arrow_left.slider__nav-arrow_2,
+			&:checked ~ .container .slider__nav-arrow_right.slider__nav-arrow_4
+				display: inline-block
+			&:checked ~ .container .slider__nav-item_3::before
+				background-color: #ffffff
+			&:checked ~ .slider__item_3
+				@include slider__item_active()
+
+		&_4
+			&:checked ~ .container .slider__nav-arrow_left.slider__nav-arrow_3,
+			&:checked ~ .container .slider__nav-arrow_right.slider__nav-arrow_1
+				display: inline-block
+			&:checked ~ .container .slider__nav-item_4::before
+				background-color: #ffffff
+			&:checked ~ .slider__item_4
+				@include slider__item_active()

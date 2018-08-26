@@ -1,0 +1,18 @@
+.header
+	padding-top: 10px
+	position: relative
+	&__row
+		&_1
+			margin-bottom: 5px
+		&_2
+			position: relative
+	&__col
+		display: flex
+		align-items: center
+		&_2
+			justify-content: flex-end
+		@media #{$tablet}
+			margin-bottom: 10px
+			justify-content: center
+		@media #{$phone-mini}
+			flex-direction: column

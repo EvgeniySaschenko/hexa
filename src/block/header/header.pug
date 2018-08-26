@@ -1,0 +1,143 @@
+mixin b-header()
+	+b.HEADER.header
+		.container
+			+e.row_1.row
+				+e.col_1.col-lg-6.col-md-6
+					+b.logo
+						+e.A(href="#").text_1 LOGO
+						+e.H1.text_2 Фабрика фотообоев в КИЕВЕ <br> изготовление фотообоев
+				+e.col_2.col-lg-6.col-md-6
+					+b.contacts_header
+						+e.A(href="tel:0442782100").link 044 278 21 00
+					+b.BUTTON.btn_feedback-header Обратный звонок
+		+b.INPUT(type="checkbox" id="nav_header").btn_header-nav-checkbox
+		+b.LABEL(for="nav_header").btn_header-nav
+			+e.item
+
+		+e.row_2
+			+b.nav_header
+				.container
+					+e.list
+						+e.item
+							+e.A(href="#").link главная
+						+e.item
+							+e.A(href="#").link для детской
+						+e.item
+							+e.A(href="#").link для спальни
+						+e.item
+							+e.A(href="#").link для кухни
+						+e.item
+							+e.A(href="#").link контакты
+
+			+b.slider
+
+				+e.INPUT(type="radio" id="slider__item_1" name="slider__item" checked="checked").radio_1
+				+e.INPUT(type="radio" id="slider__item_2" name="slider__item").radio_2
+				+e.INPUT(type="radio" id="slider__item_3" name="slider__item").radio_3
+				+e.INPUT(type="radio" id="slider__item_4" name="slider__item").radio_4
+
+				+e.item_1(style="background-image: url(img/slider/1.jpg);")
+					.container
+						+e.box
+							+e.box-row_1
+								+e.name фотообои
+								br
+								+e.destination 
+									+e.destination-text Для зала
+								+e.price
+									span от 
+									+e.SPAN.price-count 50 
+									span $/м
+									sup 2
+
+							+e.box-row_2
+								+e.text Более 6000 идей фотообоев <br> для ГОСТИНОЙ
+								+e.A(href="#").btn.btn_header-slider Смотреть идеи
+
+				+e.item_2(style="background-image: url(img/slider/2.jpg);")
+					.container
+						+e.box
+							+e.box-row_1
+								+e.name фотообои
+								br
+								+e.destination 
+									+e.destination-text Для спальни
+								+e.price
+									span от 
+									+e.SPAN.price-count 80 
+									span $/м2
+							+e.box-row_2
+								+e.text Более 6000 идей фотообоев <br> для ГОСТИНОЙ
+								+e.A(href="#").btn.btn_header-slider Смотреть идеи
+
+				+e.item_3(style="background-image: url(img/slider/3.jpg);")
+					.container
+						+e.box
+							+e.box-row_1
+								+e.name фотообои
+								br
+								+e.destination 
+									+e.destination-text Для гостинной
+								+e.price
+									span от 
+									+e.SPAN.price-count 500
+									span $/м2
+							+e.box-row_2
+								+e.text Более 6000 идей фотообоев <br> для ГОСТИНОЙ
+								+e.A(href="#").btn.btn_header-slider Смотреть идеи
+
+				+e.item_4(style="background-image: url(img/slider/4.jpg);")
+					.container
+						+e.box
+							+e.box-row_1
+								+e.name фотообои
+								br
+								+e.destination 
+									+e.destination-text Для кухни
+								+e.price
+									span от 
+									+e.SPAN.price-count 5000
+									span $/м2
+							+e.box-row_2
+								+e.text Более 6000 идей фотообоев <br> для ГОСТИНОЙ
+								+e.A(href="#").btn.btn_header-slider Смотреть идеи
+
+				.container
+					+e.nav
+						+e.LABEL.nav-arrow(for="slider__item_1" class="_1 _left").icon.icon-arrow-left
+						+e.LABEL.nav-arrow(for="slider__item_2" class="_2 _left").icon.icon-arrow-left
+						+e.LABEL.nav-arrow(for="slider__item_3" class="_3 _left").icon.icon-arrow-left
+						+e.LABEL.nav-arrow(for="slider__item_4" class="_4 _left").icon.icon-arrow-left
+
+						+e.LABEL(for="slider__item_1").nav-item_1
+						+e.LABEL(for="slider__item_2").nav-item_2
+						+e.LABEL(for="slider__item_3").nav-item_3
+						+e.LABEL(for="slider__item_4").nav-item_4
+
+						+e.LABEL.nav-arrow(for="slider__item_1" class="_1 _right").icon.icon-arrow-right
+						+e.LABEL.nav-arrow(for="slider__item_2" class="_2 _right").icon.icon-arrow-right
+						+e.LABEL.nav-arrow(for="slider__item_3" class="_3 _right").icon.icon-arrow-right
+						+e.LABEL.nav-arrow(for="slider__item_4" class="_4 _right").icon.icon-arrow-right
+
+			+b.advantages
+				.container
+					.row
+						+e.item.col-lg-3.col-md-6.col-sm-6
+							+e.icon.icon.icon-picture
+							+e.H3.title Печатаем что угодно
+							+e.P.text Все фотообои мы изготавливаем под заказ на собственном оборудовании. По этому можем напечатать совершенно все, <br> что вы захотите
+
+						+e.item.col-lg-3.col-md-6.col-sm-6
+							+e.icon.icon.icon-size
+							+e.H3.title Любые размеры
+							+e.P.text Профессиональное оборудование позволяет напечатать фотообои совершенно любого размера. Можем заклеить как часть, таки все стену без ограничений.
+
+						+e.item.col-lg-3.col-md-6.col-sm-6
+							+e.icon.icon.icon-calendar
+							+e.H3.title Изготовление за 1 день
+							+e.P.text В среднем, изготовление одних фотообоев среднего размера занимает не более одного дня!
+
+						+e.item.col-lg-3.col-md-6.col-sm-6
+							+e.icon.icon.icon-handshake
+							+e.H3.title Без посредников
+							+e.P.text Мы имеем в наличие все необходимое оборудование для самостоятельного изготовления фотообоев. А значит вы не переплачиваете посредникам.
